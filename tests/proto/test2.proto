@@ -1,0 +1,34 @@
+syntax = "proto3";
+
+package com.example;
+
+
+message Bob {
+    oneof test_type {
+        TestMessageC = 1;
+        TestMessageD = 2;
+    }
+
+    message TestMessageC {
+        oneof test_message_C_type{
+            int32 i32 = 1;
+            int64 i64 = 2;
+            string var_char = 3;
+            Dict map = 4;
+        }
+
+        message Dict {
+            message KV {
+                string key = 1;
+                string value = 2;
+            }
+
+            repeated KV key_values = 1;
+        }
+    }
+
+    message TestMessageD {
+      int32 food = 1;
+      string baz = 2;
+    }
+}

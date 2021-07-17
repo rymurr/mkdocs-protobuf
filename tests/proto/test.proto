@@ -1,0 +1,39 @@
+syntax = "proto3";
+
+package com.example;
+
+
+message Test {
+    oneof test_type {
+        TestMessageA testA= 1;
+        TestMessageB testB = 2;
+    }
+
+    message TestMessageA {
+        oneof test_message_a_type{
+            int32 i32 = 1;
+            int64 i64 = 2;
+            string var_char = 3;
+            Map map = 4;
+        }
+
+        message Map {
+            message KeyValue {
+                string key = 1;
+                string value = 2;
+            }
+
+            repeated KeyValue key_values = 1;
+        }
+    }
+
+    message TestMessageB {
+      int32 foo = 1;
+      string bar = 2;
+    }
+}
+
+message Foo {
+    required string x = 1;
+    string y = 2;
+}

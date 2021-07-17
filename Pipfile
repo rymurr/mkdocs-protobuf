@@ -1,0 +1,39 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[dev-packages]
+flake8 = "*"
+pytest = "*"
+isort = "*"
+flake8-docstrings = "*"
+black = "*"
+mypy = "*"
+codecov = "*"
+pytest-cov = "*"
+pytest-mock = "*"
+flit = "*"
+markdown-include = "*"
+pygments = "*"
+pymdown-extensions = "*"
+pytest-mypy = "0.8.1"
+pytest-runner = "5.3.1"
+flake8-annotations = "*"
+flake8-bandit = "2.1.2"
+flake8-black = "0.2.1"
+flake8-bugbear = "21.4.3"
+flake8-import-order = "0.18.1"
+typing-extensions = "*"
+tox = "*"
+tox-pipenv = "*"
+tox-gh-actions = "*"
+
+[packages]
+mkdocs = "1.2.2"
+
+[requires]
+python_version = "3.8"
+
+[pipenv]
+allow_prereleases = true
