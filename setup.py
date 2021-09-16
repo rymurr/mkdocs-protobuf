@@ -40,6 +40,6 @@ setup(
     setup_requires=setup_requirements,
     test_suite="tests",
     tests_require=[],
-    version="0.0.3",
+    version="0.0.4",
     zip_safe=False,
 )
