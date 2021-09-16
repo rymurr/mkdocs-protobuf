@@ -1,4 +1,4 @@
 # -*- coding: utf-8 -*-
 """Protobuf IDL templating for mkdocs."""
 
-__version__ = "0.0.2"
+__version__ = "0.0.3"
