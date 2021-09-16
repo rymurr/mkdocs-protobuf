@@ -21,3 +21,4 @@ def test_basic_working() -> None:
 
         assert "<pre><code>message Test {" in contents
         assert "<pre><code>message TestMessageA {" in contents
+        assert "<pre><code>message TestMessageB {" not in contents
