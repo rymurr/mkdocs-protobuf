@@ -95,7 +95,7 @@ def read_proto(proto_file: str) -> dict:
     return messages
 
 
-def _strip_indent(data: str, found: re.Match, msg_start: int, msg_end: Optional[int]) -> str:
+def _strip_indent(data: str, found: "re.Match", msg_start: int, msg_end: Optional[int]) -> str:
     # remove indentation from sub messages
     # extract previous newline and determine the indentation of this message
     last_newline = [i for i, c in enumerate(data[: found.start()]) if c == "\n"][-1]
