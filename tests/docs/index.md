@@ -1,9 +1,9 @@
 Test
 
 ```
-{[% proto.message.TestMessageA %]}
+%%% proto.message.TestMessageA %%%
 ```
 
 ```
-{[% proto.message.Test %]}
+%%% proto.message.Test %%%
 ```

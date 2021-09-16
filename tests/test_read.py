@@ -25,6 +25,15 @@ def test_find_and_replace() -> None:
     assert expected == result
 
 
+def test_find_and_replace_with_indent() -> None:
+    """Replace template with protobuf."""
+    messages = read_proto("tests/proto/test.proto", 4)
+    with open("tests/docs/index.md") as f:
+        content = f.read()
+    result = find_and_replace(content, messages)
+    assert expected2 == result
+
+
 expected = """Test
 
 ```
@@ -78,5 +87,61 @@ message Test {
     }
 
 }
+```
+"""
+
+expected2 = """Test
+
+```
+    message TestMessageA {
+        oneof test_message_a_type{
+            int32 i32 = 1;
+            int64 i64 = 2;
+            string var_char = 3;
+            Map map = 4;
+        }
+
+        message Map {
+            message KeyValue {
+                string key = 1;
+                string value = 2;
+            }
+
+            repeated KeyValue key_values = 1;
+        }
+    }
+```
+
+```
+    message Test {
+        oneof test_type {
+            TestMessageA testA= 1;
+            TestMessageB testB = 2;
+        }
+
+        message TestMessageA {
+            oneof test_message_a_type{
+                int32 i32 = 1;
+                int64 i64 = 2;
+                string var_char = 3;
+                Map map = 4;
+            }
+
+            message Map {
+                message KeyValue {
+                    string key = 1;
+                    string value = 2;
+                }
+
+                repeated KeyValue key_values = 1;
+            }
+        }
+
+        message TestMessageB {
+          int32 foo = 1;
+          string bar = 2;
+        }
+
+    }
 ```
 """
