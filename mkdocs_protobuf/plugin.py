@@ -45,12 +45,12 @@ class ProtobufDisplay(BasePlugin):
 
 def find_and_replace(markdown: str, messages: dict) -> str:
     """Find all message templates in the markdown document and replace with actual protobuf message."""
-    find_template = re.compile("{% (.*) %}")
+    find_template = re.compile("{\\[% (.*) %]}")
     transforms = []
     for found in find_template.finditer(markdown):
         msg_name = find_template.split(markdown[found.start() : found.end()])[1]
         msg = messages[msg_name.split(".")[-1]]
-        transforms.append((re.compile("{% " + msg_name + " %}"), msg))
+        transforms.append((re.compile("{\\[% " + msg_name + " %]}"), msg))
     for transform in transforms:
         markdown = transform[0].sub(transform[1], markdown)
     return markdown

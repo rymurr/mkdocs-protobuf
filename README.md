@@ -29,9 +29,9 @@ plugins:
      proto_dir: /path/to/proto/files
 ```
 
-The plugin will search for any templataes like the following: `{% proto.message.MessageName %}`
+The plugin will search for any templataes like the following: `{[% proto.message.MessageName %]}`
 and will replace the template with the protobuf message `MessageName`. See the `tests` directory
-for an example.
+for an example. The escape characters are odd as to not interfere w/ Jinja2 templating from other plugins.
 
 
 ## Development
