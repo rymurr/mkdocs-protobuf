@@ -33,6 +33,9 @@ class ProtobufDisplay(BasePlugin):
         indent_depth = self.config.get("indent_depth", 0)
         for root, _, files in os.walk(self.config["proto_dir"]):
             for proto in files:
+                _, ext = os.path.splitext(proto)
+                if ext != ".proto":
+                    continue
                 self.messages.update(read_proto(os.path.abspath(os.path.join(root, proto)), indent_depth))
 
     def on_page_markdown(self: "ProtobufDisplay", markdown: str, page: Page, **kwargs: Any) -> str:
