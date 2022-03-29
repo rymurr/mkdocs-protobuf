@@ -8,7 +8,7 @@ from setuptools import setup
 with open("README.md") as readme_file:
     readme = readme_file.read()
 
-requires = ["mkdocs==1.2.2"]
+requires = ["mkdocs"]
 
 setup_requirements = ["pytest-runner", "pip"]
 
