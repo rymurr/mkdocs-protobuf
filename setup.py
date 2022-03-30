@@ -37,6 +37,6 @@ setup(
     name="mkdocs_protobuf",
     packages=find_packages(include=["mkdocs_protobuf", "pymkdocs_protobufnessie.*"]),
     test_suite="tests",
-    version="0.0.8",
+    version="0.1.0",
     zip_safe=False,
 )
