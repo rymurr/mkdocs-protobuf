@@ -10,8 +10,6 @@ with open("README.md") as readme_file:
 
 requires = ["mkdocs"]
 
-setup_requirements = ["pytest-runner", "pip"]
-
 setup(
     author="Ryan Murray",
     author_email="rymurr@gmail.com",
@@ -38,9 +36,7 @@ setup(
     keywords="mkdocs_protobuf,mkdocs,protobuf",
     name="mkdocs_protobuf",
     packages=find_packages(include=["mkdocs_protobuf", "pymkdocs_protobufnessie.*"]),
-    setup_requires=setup_requirements,
     test_suite="tests",
-    tests_require=[],
     version="0.0.8",
     zip_safe=False,
 )
